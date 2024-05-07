@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do you like dogs?</title>    
+    <script defer src="/socket.io/socket.io.js"></script>
+    <script defer src="../static/scripts/message.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/messengerStyle.css">
+    
+</head>
+<body>
+    
+    <main>
+        <header>
+            <div class="container">
+                <a href = '/' class="logo">
+                    <img src="../static/textures/logo.jpg" alt="Dogs and Cats Logo">
+                </a>
+                <h1>Dogs and cats</h1>
+                <nav>
+                </nav>               
+            </div>
+        </header>
+        <div class="room-list" id="room-list">
+        </div>
+        <div class="message-container">
+            <div class="message-box" id = "message-container">
+            </div>
+            <form class="input-area" id = "send-container">
+                <input type="text" placeholder="Type your message..." id="message-input">
+                <button type="submit" id="send-button">Send</button>
+            </form>
+        </div>
+        
+    </main>
+    
+</body>
+</html>

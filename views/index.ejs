@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>do you like dogs?</title>
+    <link rel="stylesheet" type="text/css" href="../static/stylesheets/mainStyle.css">
+    
+</head>
+<body>
+    
+    <main>
+        <header>
+            <div class="container">
+                <a href = '/' class="logo">
+                    <img src="../static/textures/logo.jpg" alt="Dogs and Cats Logo">
+                </a>
+                <h1>Dogs and cats</h1>
+                <nav>
+                    <ul>   
+                      <p class ="yourLogin" id="username"></p>
+                      
+                      <li id ="log"><a href="/login">Войти</a></li>
+                      <li id ="reg"><a href="/register">Зарегистрироваться</a></li>
+                        
+                      <li id ="logOut">Выйти</li>
+                      <li id="profileButton"><button><span>&#128100;</span></button></li>
+                    </ul>
+                  </nav>
+                  
+            </div>
+        </header>
+        
+        <div id="addAnimalFormOverlay" class="overlay">
+            <div class="form-container">
+                <span class="close" onclick="closeAddAnimalForm()">&times;</span>
+                <form id="addAnimalForm" onsubmit="submitAddAnimalForm(event)">
+                    <div class = "form">
+                        <label for="name">Имя:</label>
+                        <input type="text" id="name" name="name" required>
+                    </div>
+                    <div class = "form">
+                        <label for="age">Возраст:</label>
+                        <input type="text" id="age" name="age" required>
+                    </div>
+                    <div class = "form">
+                        <label for="breed">Порода:</label>
+                        <input type="text" id="breed" name="breed" required>
+                    </div>
+                    <div class = "form">
+                        <label for="color">Цвет шерсти:</label>
+                        <input type="text" id="color" name="color" required>
+                    </div>
+                    <div class = "form">
+                        <label for="coat_type">Тип шерсти:</label>
+                        <input type="text" id="coat_type" name="coat_type" required>
+                    </div>
+                    <div class = "form">
+                        <label for="gender">Пол:</label>
+                        <input type="text" id="gender" name="gender" required>
+                    </div>
+                    <div class = "form">
+                        <label for="price">Цена:</label>
+                        <input type="text" id="price" name="price" required>
+                    </div>
+                    <div class="form">
+                        <label for="image">Изображение:</label>
+                        <input type="file" id="image" name="image" accept="image/*">
+                    </div>
+                    <input type="submit" value="Добавить животное">
+                </form>
+            </div>
+        </div>
+        
+            <div class="addAnimalButton">
+                <button id="addAnimalButton" onclick="openAddAnimalForm()">Добавить новое животное</button>
+            </div>
+        
+        <section class = "hero-section">
+            <div class ="dog3d-background">
+                <div class="overlay-text">Любовь, забота и профессиональный уход для вашего питомца</div>
+                <div class = "dog3d"></div>
+            </div>
+        </section>
+        <section class="section" id = "animals_blocks">
+        </section>
+        <section id="reviews">
+            <h2>Отзывы</h2>
+            <div class = "review_form_container">
+            <form action="" method="post" class="add-review" id ='review_form'>
+                <label for="review_type">Тип отзыва:</label>
+                <select id="review_type" name="review_type">
+                    <option value="1">Положительный</option>
+                    <option value="0">Отрицательный</option>
+                </select><br><br>
+                <label for="review_text">Текст отзыва:</label>
+                <textarea id="review_text" name="review_text"></textarea><br><br>
+                <input type="submit" value="Оставить отзыв">
+            </form>
+            </div>
+            <div id = "reviewsContainer"></div>
+            <div class="reviews_container">
+                <ul id="reviewsList">         
+                </ul>
+            </div>
+        </section>
+        <div id="messengerButton" class="message-button">
+            <span>&#x1F5E8;</span>
+        </div>
+        <div class="messenger" id = "messenger">
+            <button class="close-button">&times;</button>
+            <div class="message-box" id = "message-container">
+            </div>
+            <form class="input-area" id = "send-container">
+                <input type="text" placeholder="Type your message..." id="message-input">
+                <button id="send-button">Send</button>
+            </form>
+        </div>
+        <footer>
+            <div class="footer_container">
+                <div class="logo">
+                    <img src="../static/textures/logo.jpg" alt="Dogs and Cats Logo">
+                </div>
+                <div class="social-links">
+                    <p class="social-link">Номер: 8 999 999 99 99</p>
+                    <p class="social-link">Почта: LoveDogs@gmail.com</p>
+                </div>
+                <p class="copyright">© 2024 Dogs and Cats</p>
+            </div>
+        </footer>
+    </main>
+</body>
+<script src="../static/scripts/mainScript.js"></script>
+<script src = "../static/scripts/model3dScript.js" type="module"></script>
+<script defer src="http://localhost:3000/socket.io/socket.io.js"></script>
+<script src="../static/scripts/message.js"></script>
+</html>

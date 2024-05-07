@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+    <link rel="stylesheet" type="text/css" href="/static/stylesheets/dogStyle.css">
+</head>
+<body>
+    <main>
+        <header>
+            <div class="container">
+                <a href = '/' class="logo">
+                    <img src="../static/textures/logo.jpg" alt="Dogs and Cats Logo">
+                </a>
+                <h1>Dogs and cats</h1>               
+            </div>
+
+        </header>
+        <section class="section">
+            <div class="block">
+                <img id="image" alt="image">
+            </div>
+            <div class="details_container">
+            <div class="details">
+            </div>
+
+                <div class="buttons" id = "buttons_container">
+                    <div id = "adminButtons">
+                        <button id ="update_button">Update</button>
+                        <button id ="delete_button">Delete</button>
+                    </div>
+                    <div id = "buyButtonContainer">
+                        <button id = "buy_button">Купить</button>
+                    </div>                
+                </div>
+            </div>
+            <div id="UpdateMedicalInfo2" class="medic">
+
+            </div>
+        </section>
+        <div class="overlay" id ='overlayUpdateForm'>
+        <div id="updateDogModal" class="modal">
+            <span class="close" onclick="closeUpdateForm()">&times;</span>
+            <form id="updateDogForm">
+                <label for="name">Имя:</label>
+                <input type="text" id="updateName" name="name" required>
+                <label for="age">Возраст:</label>
+                <input type="text" id="updateAge" name="age" required>
+                <label for="breed">Порода:</label>
+                <input type="text" id="updateBreed" name="breed" required>
+                <label for="color">Цвет:</label>
+                <input type="text" id="updateColor" name="color" required>
+                <label for="coat_type">Тип шерсти:</label>
+                <input type="text" id="UpdateCoat_type" name="coat_type">
+                <label for="gender">Пол:</label>
+                <input type="text" id="updateGender" name="gender" required>
+                <label for="price">Цена:</label>
+                <input type="text" id="updatePrice" name="price">
+                <input type="submit" value="Update animal">
+            </form>
+        </div>
+    </div>
+    
+    </main>
+</body>
+<script src="../static/scripts/dogScript.js"></script>
+</html>
